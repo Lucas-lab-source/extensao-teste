@@ -1,0 +1,12 @@
+{
+  "title": "Download com QR Code",
+  "description": "Extensão que gera QR Code automaticamente ao baixar arquivos",
+  "version": "1.0",
+  "commands": [
+    {
+      "title": "Baixar com QR Code",
+      "icon": "https://cdn-icons-png.flaticon.com/512/2921/2921222.png",
+      "url": "https://lucas-lab-source.github.io/extensao-teste/index.html"
+    }
+  ]
+}

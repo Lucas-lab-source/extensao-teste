@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Download com QR Code</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <h2>Baixar Arquivo com QR Code</h2>
+  <button id="downloadBtn">Baixar Arquivo + QR Code</button>
+  <div id="qrcode"></div>
+
+  <script>
+    document.getElementById("downloadBtn").addEventListener("click", function() {
+      // Simulação de link do arquivo (no TCWEB você pegaria via API)
+      const fileUrl = "https://trimbleconnect.com/exemplo-arquivo.pdf";
+
+      // Gerar QR Code
+      const qrcodeDiv = document.getElementById("qrcode");
+      qrcodeDiv.innerHTML = "";
+      new QRCode(qrcodeDiv, {
+        text: fileUrl,
+        width: 128,
+        height: 128
+      });
+
+      // Fazer download do arquivo
+      const link = document.createElement("a");
+      link.href = fileUrl;
+      link.download = "arquivo_com_qrcode.pdf";
+      link.click();
+    });
+  </script>
+</body>
+</html>
